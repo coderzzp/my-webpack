@@ -18,6 +18,17 @@ module.exports = {
                 include: APP_PATH
             },
             {
+                test: /\.css?$/,
+                use: [
+                    {
+                        loader: 'style-loader'
+                    },
+                    {
+                        loader: 'css-loader'
+                    }
+                ]
+            },
+            {
                 test: /\.tsx?$/,
                 loaders: ['babel-loader', 'ts-loader']
             }

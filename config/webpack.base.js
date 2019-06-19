@@ -3,7 +3,7 @@ const APP_PATH = path.resolve(__dirname, '../app');
 const DIST_PATH = path.resolve(__dirname, '../dist');
 module.exports = {
     entry: {
-        app: './app/index.js',
+        app: './app/index.tsx',
         vendor:['react','react-dom'],
     },    
     output: {
@@ -16,7 +16,12 @@ module.exports = {
                 test: /\.js?$/,
                 use: "babel-loader",
                 include: APP_PATH
+            },
+            {
+                test: /\.tsx?$/,
+                loaders: ['babel-loader', 'ts-loader']
             }
         ]
+        
     }
 };
